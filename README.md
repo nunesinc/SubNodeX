@@ -40,4 +40,4 @@ $ docker-compose up
 
 Futuras alterações: Portugues e Inglês, Refatoramento de código
 
-=== Atualização: 27/01/2023 ===
+=== Atualização: 31/01/2023 ===
