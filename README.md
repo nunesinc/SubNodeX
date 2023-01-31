@@ -1,6 +1,6 @@
 # Substrate node
 
-Versão aprimorada para rodar o  substrate node usando docker docker. Baseado na versão de desenvolvimento do  substrate-node-template e substrate-front-end-template 
+Versão aprimorada para rodar o  substrate node usando docker. Baseado na versão de desenvolvimento do  substrate-node-template e substrate-front-end-template 
 
 👷‍♂️ Testado em ambiente Windows com terminal WSL2
 
