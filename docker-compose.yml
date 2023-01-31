@@ -1,0 +1,62 @@
+#version: "3.2"
+
+#services:
+#  dev:
+#    container_name: node-template
+#    image: paritytech/ci-linux:production
+#    working_dir: /var/www/node-template
+#    ports:
+#      - "9944:9944"
+#    environment:
+#      - CARGO_HOME=/var/www/node-template/.cargo
+#    volumes:
+#      - .:/var/www/node-template
+#      - type: bind
+#        source: ./.local
+#        target: /root/.local
+#    command: bash -c "cargo build --release && ./target/release/node-template --dev --ws-external"
+
+ #version: "3.2"
+ #services:
+ #  node:
+ #    build:
+ #      context: ./nodex
+ #      dockerfile: Dockerfile
+ #    ports:
+ #      - "9944:9944"
+ #      - "9933:9933"
+ #    command: ["--base-path", "/data", "--chain", "dev"]
+ #  frontend:
+ #    build:
+ #      context: ./frontx
+ #      dockerfile: Dockerfile
+ #    ports:
+ #      - "8000:8000"
+
+
+
+version: '3.2'
+services:
+  node:
+    build:
+      context: ./nodex
+      dockerfile: Dockerfile
+    ports:
+      - "30333:30333"
+      - "9933:9933"
+      - "9944:9944"
+      - "9615:9615"
+    volumes:
+      - chain-data:/chain-data
+  frontend:
+    build:
+      context: ./frontx
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+
+volumes:
+  chain-data:
+
+
+
